@@ -6,9 +6,12 @@ export default {
     methods: {
         suppr: function() {
             this.$emit('remove', { id: this.todo.id });
+        },
+        save: function() {
+            this.$emit('edit', { id: this.todo.id, text: this.todo.text });
         }
     },
-    emits: ['remove']
+    emits: ['remove', 'edit']
 }
 </script>
 
@@ -16,9 +19,11 @@ export default {
     <li :class="{ 'alert alert-success': todo.checked }">
         <div class="checkbox">
             <label>
-                <input type="checkbox" v-model="todo.checked"> {{ todo.text }}
+                <input type="checkbox" v-model="todo.checked">
+                <input type="text" v-model="todo.text">
             </label>
         </div>
-        <input type="button" class="btn btn-danger" value="Supprimer" @click="suppr">
+        <button class="btn btn-primary" @click="save">Enregistrer</button>
+        <button class="btn btn-danger" @click="suppr">Supprimer</button>
     </li>
 </template>
