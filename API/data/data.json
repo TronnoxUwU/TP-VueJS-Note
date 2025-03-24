@@ -1,0 +1,40 @@
+[
+    {
+        "name":"quizz 1",
+        "questions":[
+            {
+                "name":"question 1",
+                "type":"choix"
+            },
+            {
+                "name":"question 2",
+                "type":"ouverte"
+            },
+            {
+                "name":"question 3",
+                "type":"choix"
+            }
+        ]
+    },
+    {
+        "name":"quizz 2",
+        "questions":[
+            {
+                "name":"question 1",
+                "type":"choix"
+            },
+            {
+                "name":"question 2",
+                "type":"choix"
+            },
+            {
+                "name":"question 3",
+                "type":"ouverte"
+            },
+            {
+                "name":"question 4",
+                "type":"ouverte"
+            }
+        ]
+    }
+]
