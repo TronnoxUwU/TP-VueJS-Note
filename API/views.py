@@ -92,7 +92,9 @@ def get_quiz():
 
 @app.route('/todo/api/v1.0/quiz', methods=['DELETE'])
 def delete_quiz():
+    print("deleted")
     quiz_id = request.args.get('quiz_id', type=int)
+    print(quiz_id)
     if not supprimer_quiz(quiz_id):
         abort(404)
     return jsonify({'result': True})
