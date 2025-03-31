@@ -77,3 +77,18 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+ul
+{
+  list-style-type: none;
+}
+
+ul>li>*{
+  margin: 5px;
+}
+
+
+.actions>*{
+  margin: 5px;
+  gap: 10px;
+}
