@@ -9,7 +9,7 @@
         <h4>Questions</h4>
         <ul>
           <li v-for="(question, index) in localQuiz.questions" :key="question.id || index">
-            <input v-model="question.name" placeholder="Intitulé de la question" class="form-control" />
+            <input v-model="question.title" placeholder="Intitulé de la question" class="form-control" />
             <select v-model="question.type" class="form-control">
               <option value="ouverte">Ouverte</option>
               <option value="choix">Choix</option>
@@ -44,7 +44,6 @@
     methods: {
       addQuestion() {
         this.localQuiz.questions.push({
-          name: '',
           type: 'ouverte'
         });
       },
@@ -61,6 +60,7 @@
           .then(data => {
             // L'API renvoie le quiz mis à jour sous data.quiz
             this.$emit('update', data.quiz);
+            $emit('close');
           })
           .catch(error => console.error("Erreur de mise à jour :", error));
       }

@@ -128,10 +128,9 @@ def update_quiz():
         quiz.questions = [] 
 
         for question_data in request.json['questions']:
-            print(question_data)
-            if 'name' not in question_data or 'type' not in question_data:
+            question_data['name'] = question_data['title']
+            if 'title' not in question_data or 'type' not in question_data:
                 abort(400, description="Each question must have a title and type")
-
             new_question = None
             match(question_data['type']):
                 case "ouverte":
